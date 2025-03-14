@@ -4,7 +4,12 @@ version = "0.1.0"
 description = "Benchmarks for the turbopuffer Python SDK"
 requires-python = ">=3.12"
 dependencies = [
+    "httpcore>=1.0.7",
     "pyperf>=2.9.0",
-    "turbopuffer[fast]>=0.1.33",
+    "turbopuffer",
     "typing-extensions>=4.12.2",
 ]
+
+[tool.uv.sources]
+turbopuffer = { git = "ssh://git@github.com/stainless-sdks/turbopuffer-python.git", branch = "perf" }
+httpcore = { git = "https://github.com/benesch/httpcore-speedups" }
